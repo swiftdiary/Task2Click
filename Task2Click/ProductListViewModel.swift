@@ -5,7 +5,7 @@
 //  Created by Akbar Khusanbaev on 11/12/25.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 @MainActor
@@ -14,7 +14,7 @@ final class ProductListViewModel: ObservableObject {
 
     @Published var products: [Product] = []
     @Published var isLoading = false
-    @Published var errorMessage: String?
+    @Published var errorMessage: LocalizedStringKey?
 
     init(productService: ProductServicing) {
         self.productService = productService
