@@ -13,8 +13,8 @@ final class ProductListViewModelTests: XCTestCase {
 
     func testLoadProductsSuccess() async {
         let mockProducts = [
-            Product(id: 1, title: "Test A", price: 10.0, description: "A", category: "Cat", image: URL(string: "https://example.com/a.png")!),
-            Product(id: 2, title: "Test B", price: 20.0, description: "B", category: "Cat", image: URL(string: "https://example.com/b.png")!)
+            Product(id: 1, title: "Test A", price: 10.0, description: "A", image: URL(string: "https://example.com/a.png")!),
+            Product(id: 2, title: "Test B", price: 20.0, description: "B", image: URL(string: "https://example.com/b.png")!)
         ]
         let service = MockProductService(result: .success(mockProducts))
         let viewModel = ProductListViewModel(productService: service)
@@ -50,3 +50,4 @@ private struct MockProductService: ProductServicing {
         }
     }
 }
+
